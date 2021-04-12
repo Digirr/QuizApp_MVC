@@ -102,7 +102,7 @@ class QuizActivity : AppCompatActivity() {
             returnValue = (3 - returnValue.toInt()).toString()
             question_return.text = returnValue
         } else {
-            question_return.text = 3.toString()
+            question_return.text = 0.toString()
         }
     }
 
