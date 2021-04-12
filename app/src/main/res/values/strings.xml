@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">QuizApp_MVC</string>
+    <string name="question_text">Canberra jest stolicą Australii.</string>
+    <string name="true_button">Prawda</string>
+    <string name="false_button">Fałsz</string>
+    <string name="correct_toast">Poprawna odpowiedź!</string>
+    <string name="incorrect_toast">Niepoprawna odpowiedź!</string>
+    <string name="next_button">Następne</string>
+    <string name="prev_button">Poprzednie</string>
+
+    <string-array name="questions_array">
+        <item>Czy węzeł jest jednostką szybkości stosowaną w żegludze?</item>
+        <item>Cegły klinkierowe stosowane są do okładania ścian.</item>
+        <item>Chabry mają żółte kwiaty.</item>
+        <item>Tkanka łączna składa się z toluenu.</item>
+        <item>Persefona była znana także jako Kora.</item>
+        <item>Pacyfik jest największym obszarem wody na Ziemi</item>
+    </string-array>
+
+    <string name="warning_text">Czy na pewno chcesz to zrobić?</string>
+    <string name="show_answer_button">Pokaż odpowiedź</string>
+    <string name="cheat_button">Podpowiedź</string>
+    <string name="judgment_toast">Oszukiwanie jest złe!</string>
+    <string name="answers_left">Liczba pozostałych odpowiedzi: </string>
+</resources>
