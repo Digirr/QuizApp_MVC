@@ -2,10 +2,12 @@ package com.digir.quizapp_mvc
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
 import android.view.ViewAnimationUtils
 import androidx.appcompat.app.AppCompatActivity
@@ -43,6 +45,7 @@ class CheatActivity : AppCompatActivity() {
 
         cheat_checks_score.text = cheatPoints.toString()
 
+
         mAnswerIsTrue = intent.getBooleanExtra(EXTRA_ANSWER_IS_TRUE, false)
 
         if(savedInstanceState != null) {
@@ -76,6 +79,27 @@ class CheatActivity : AppCompatActivity() {
             cheat_checks_score.text = cheatPoints.toString()
         }
     }
+    private fun returnData() {  //Zadanie na 5
+        val resultIntent = Intent()
+        resultIntent.putExtra("result", cheatPoints.toString())
+        setResult(Activity.RESULT_OK, resultIntent)
+        finish()
+    }
+    override fun dispatchKeyEvent(event: KeyEvent?): Boolean {
+        if (event != null) {
+            if(event.keyCode == KeyEvent.KEYCODE_BACK) {
+                returnData()
+                return true
+            }
+        }
+        return super.dispatchKeyEvent(event)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        returnData()
+    }
+
     private fun checkApi() {
         val version = Build.VERSION.SDK_INT
         which_api.text = ("API LVL $version")

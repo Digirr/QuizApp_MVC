@@ -36,7 +36,6 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/prev_button"
             android:src="@mipmap/arrow_left">
-
         </ImageButton>
         <Button
             android:id="@+id/cheat_button"
@@ -51,4 +50,25 @@
             android:src="@mipmap/arrow_right">
         </ImageButton>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_marginTop="50dp"
+            android:id="@+id/cheat_checks_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp"
+            android:paddingRight="3dp"
+            android:text="Wykorzystane podopowiedzi:"/>
+    <TextView
+        android:layout_marginTop="50dp"
+        android:id="@+id/question_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="24dp"/>
+    </LinearLayout>
+
 </LinearLayout>

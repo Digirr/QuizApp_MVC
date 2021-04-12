@@ -18,6 +18,7 @@ class QuizActivity : AppCompatActivity() {
     private val questWasDone : ArrayList<Boolean> = ArrayList()
     private var mIsCheater : Boolean = false
     private var score: Int = 0
+    private var returnValue: String = ""
 
     companion object{
         private const val REQUEST_CODE_CHEAT : Int = 0
@@ -34,9 +35,11 @@ class QuizActivity : AppCompatActivity() {
         setContentView(R.layout.activity_quiz)
 
         val questionArray: Array<String> = applicationContext.resources.getStringArray(R.array.questions_array)
+        val questionArrayAnswers: Array<String> = applicationContext.resources.getStringArray(R.array.questions_answers)
 
-        for (element in questionArray) {
-            mQuestionBank.add(Question(element, true))
+        for (i in questionArray.indices) {
+
+            mQuestionBank.add(Question(questionArray[i], questionArrayAnswers[i].toBoolean()))
             questWasDone.add(false)
         }
 
@@ -92,6 +95,17 @@ class QuizActivity : AppCompatActivity() {
 
         updateQuestion()
     }
+
+    override fun onStart() {    //Zadanie na 5
+        super.onStart()
+        if(returnValue != "") {
+            returnValue = (3 - returnValue.toInt()).toString()
+            question_return.text = returnValue
+        } else {
+            question_return.text = 3.toString()
+        }
+    }
+
     private fun updateQuestion() {
         val question = mQuestionBank[mCurrentIndex].mTextResIdHere
         question_text_view.text = question
@@ -126,6 +140,10 @@ class QuizActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if(resultCode != Activity.RESULT_OK)
             return
+        else {
+            returnValue = data?.getStringExtra("result").toString() //Zadanie na 5
+        }
+
         if(requestCode == REQUEST_CODE_CHEAT){
             if(data == null)
                 return

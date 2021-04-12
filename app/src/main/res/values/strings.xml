@@ -16,6 +16,15 @@
         <item>Persefona była znana także jako Kora.</item>
         <item>Pacyfik jest największym obszarem wody na Ziemi</item>
     </string-array>
+    <string-array name="questions_answers">
+        <item>true</item>
+        <item>true</item>
+        <item>true</item>
+        <item>false</item>
+        <item>true</item>
+        <item>true</item>
+    </string-array>
+
 
     <string name="warning_text">Czy na pewno chcesz to zrobić?</string>
     <string name="show_answer_button">Pokaż odpowiedź</string>
